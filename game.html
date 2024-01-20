@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+   
+</head>
+<body>
+    <h2>Let's play a game</h2>
+    <p>computer's Choice: <span id="computer"></span></p>
+    <p>user's choice: <span id="user"></span></p>
+    <button class= btn id="rock">rock</button>
+    <button class= btn id="paper">paper</button>
+    <button class= btn id="scissor">scissor</button>
+    <h3>result: <span class="verdict"></span></h3>
+       <script>
+        let btn = document.querySelectorAll('.btn')
+        let user_choice = document.querySelector('#user')
+        let comp_choice = document.querySelector('#computer')
+        let show = document.querySelector('.verdict')
+
+        btn.forEach((click)=>{
+            click.addEventListener('click',function(e){
+                user_choice.innerHTML = e.target.id
+               
+                computer()
+                result()
+            })
+            
+        })
+
+        function computer() {
+          let choices = ['rock','paper','scissor']
+          let random = Math.floor(Math.random()*choices.length)
+          let computer_choice = choices[random]
+         
+         if(computer_choice==='rock'){
+            comp_choice.innerHTML = "rock"
+         }
+         if(computer_choice==='paper'){
+            comp_choice.innerHTML = "paper"
+         }
+         if(computer_choice==='scissor'){
+            comp_choice.innerHTML = "scissor"
+         }
+
+
+        }
+
+        function result(){
+            if(user_choice.innerHTML === comp_choice.innerHTML){
+                    show.innerHTML = "it's a draw"
+            }
+            else if
+                (comp_choice.innerHTML === 'scissor' && user_choice.innerHTML==='rock')
+                {
+                show.innerHTML = 'user won'
+            }
+            else if
+                (user_choice.innerHTML==='paper'&&comp_choice.innerHTML==='rock'){
+                show.innerHTML = 'user won'
+            }
+            else if
+            (user_choice.innerHTML==='scissor'&&comp_choice.innerHTML==='paper')
+            {
+                show.innerHTML = 'user won '
+            }
+            else{
+                show.innerHTML = 'computer won'
+            }
+        }
+        
+
+        
+       </script>
+</body>
+</html>
