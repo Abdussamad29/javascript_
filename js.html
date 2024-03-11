@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: tomato;
+        }
+        .cls{
+            font-size: 2rem;
+            color: pink;
+            width: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">submit the value</label>
+        <input type="text" id="value">
+        <button type="button" class="click">submit</button>
+    </form>
+    <p class="number"></p>
+    <h2 class="main">hi there </h2>
+    <p class="cls"></p>
+ <script>
+    let message = document.querySelector('.number')
+    let btn = document.querySelector('.click')
+    .addEventListener('click',function(e){
+        e.preventDefault()
+        let value = document.querySelector('#value').value
+        if(isNaN(value)){
+            message.innerHTML = "enter a valid number "
+        }
+        else if(value==="" || value<1){
+            message.innerHTML = 'not valid'
+        }
+        else{
+            message.innerHTML = `the number is ${value}`
+        }
+
+    })
+    let True = true
+    let main = document.querySelector('.main')
+    .addEventListener('click',()=>{
+        let cls = document.querySelector('.cls')
+        if(True){
+            cls.innerHTML = "clicked"
+        }
+        else{
+            cls.innerHTML = ""
+        }
+        True = !True
+
+    })
+  
+ </script>
+      
+        
+</body>
+</html>
